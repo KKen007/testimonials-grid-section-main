@@ -132,7 +132,7 @@ article {
 
 @media screen and (min-width:800px) {
     body {
-        padding-top: 50px;
+        padding-top: 200px;
     }
     main {
         max-height: 80vh;
