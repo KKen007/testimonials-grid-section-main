@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Purple-50: hsl(260, 100%, 95%);
+    --Purple-300: hsl(264, 82%, 80%);
+    --Purple-500: hsl(263, 55%, 52%);
+    --White: hsl(0, 0%, 100%);
+    --Grey-100: hsl(214, 17%, 92%);
+    --Grey-200: hsl(0, 0%, 81%);
+    --Grey-400: hsl(224, 10%, 45%);
+    --Grey-500: hsl(217, 19%, 35%);
+    --Dark-blue: hsl(219, 29%, 14%);
+    --Black: hsl(0, 0%, 7%);
+
+    --ff: 'Barlow Semi Condensed';
+
+    --fw-base: 500;
+    --fw-bold: 600;
+
+    --fs: 13px;
+}
+
+body {
+    padding-block: 40px;
+    background-color: var(--White);
+    display: flex;
+    place-content: center;
+    font-weight: var(--fw-base);
+    font-family: var(--ff);
+}
+
+main {
+    width: 81%;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    gap: 2.1rem;
+}
+
+article {
+    padding: 30px;
+    border-radius: 8px;
+    display: grid;
+    gap: 14px;
+}
+
+.paragraph-1 {
+    font-weight: var(--fw-bold);
+    font-size: 20px;
+}
+
+.paragraph-2 {
+    font-size: var(--fs);
+}
+
+.profile {
+    display: flex;
+    gap: 15px;
+
+    img {
+        width: 30px;
+        border-radius: 50%;
+    }
+    
+    h2 {
+        font-size: 13px;
+        font-weight: var(--fw-bold);
+    }
+    
+    p {
+        font-size: 12px;
+    }
+}
+
+
+
+#article-1 {
+    background-color: var(--Purple-500);
+    color: var(--White);
+
+    img {
+        border: solid 2px var(--Purple-300);
+    }
+    
+    .paragraph-2, .profile p {
+        color: var(--Purple-50);
+    }
+}
+
+#article-2 {
+    background-color: var(--Grey-500);
+    color: var(--White);
+
+    .paragraph-2, .profile p {
+        color: var(--Grey-200);
+    }
+}
+
+#article-3 {
+    box-shadow: 5px 5px 200px var(--Grey-400);
+    color: var(--Grey-500);
+
+    .profile p, .paragraph-2 {
+        color: var(--Grey-400);
+    }
+}
+
+#article-4 {
+    background-color: var(--Dark-blue);
+    color: var(--White);
+
+    img {
+        border: solid 2px var(--Purple-500);
+    }
+}
+
+#article-5 {
+    box-shadow: 5px 5px 50px var(--Grey-200);
+    color: var(--Grey-500);
+
+    .profile p, .paragraph-2 {
+        color: var(--Grey-400);
+    }
+
+}
+
+@media screen and (min-width:800px) {
+    body {
+        padding-top: 50px;
+    }
+    main {
+        max-height: 80vh;
+    }
+
+    .grid {
+        height: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    #article-1, #article-4 {
+        grid-column: span 2;
+    }
+
+    #article-4 {
+        grid-column: 2/4;
+    }
+
+    #article-3 {
+        grid-column: 1/2;
+    }
+
+    #article-5 {
+        grid-column: 4/5;
+        grid-row: 1/ span 2;
+    }
+}
